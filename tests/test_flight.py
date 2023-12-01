@@ -22,7 +22,7 @@ def flight_server():
 @pytest.mark.asyncio
 async def test_async_flight_client(flight_server):
     # Use the client and server in the same test
-    client = async_connect(f'localhost:{flight_server.port}')
+    client = await async_connect(f'localhost:{flight_server.port}')
     get_call = client.do_get(flight.Ticket(ticket=b"test"))
     table = await get_call.read_all()
     assert table.num_rows == 3

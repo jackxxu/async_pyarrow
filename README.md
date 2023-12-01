@@ -6,7 +6,7 @@ currently, [pyarrow](https://arrow.apache.org/docs/python/index.html) package on
 
 ```python
     from async_pyarrow.flight import connect as async_connect
-    client = async_connect(f'localhost:50051')
+    client = await async_connect(f'localhost:50051')
     get_call = client.do_get(flight.Ticket(ticket=b"test"))
     table = await get_call.read_all()
 ```

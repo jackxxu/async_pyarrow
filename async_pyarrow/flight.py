@@ -41,7 +41,7 @@ class AsyncFlightClient():
         return AsyncGetCall(call)
 
 
-def connect(connection_str) -> AsyncFlightClient:
+async def connect(connection_str) -> AsyncFlightClient:
     channel = grpc.aio.insecure_channel(connection_str)
     stub = FlightServiceStub(channel)
     return AsyncFlightClient(stub)
