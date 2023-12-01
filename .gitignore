@@ -1,0 +1,6 @@
+.DS_Store
+venv
+dist
+build
+async_pyarrow.egg-info
+__pycache__
